@@ -1,6 +1,15 @@
 <h1>All Articles
 	<%= link_to 'Create a new Article', new_article_path, class: 'new_article pull-right btn btn-success' %>
 </h1>
+
+<div id='sidebar'>
+	<div>
+		<% @pages.each do |page| %>
+			<%= link_to page.title, page_path(page) %><br/>
+		<% end %>
+	</div>
+</div>
+
 <ul id='articles'>
 	<% @articles.each do |article| %>
 		<li>
@@ -8,3 +17,4 @@
 		</li>
 	<% end %>
 </ul>
+
